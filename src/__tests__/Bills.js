@@ -64,6 +64,7 @@ describe("Given I am connected as an employee", () => {
         userEvent.click(newBillsButton);
 
         expect(handleClickNewBill).toHaveBeenCalled();
+        expect(screen.getByText('Envoyer une note de frais')).toBeTruthy();
       })
     })
     describe("When I click on the eye icon", () => {
@@ -90,9 +91,8 @@ describe("Given I am connected as an employee", () => {
           userEvent.click(iconEye);
           expect(handleClickIconEye).toHaveBeenCalled();
         })
+        expect(document.querySelector('.modal')).toBeTruthy();
       })
     })
   })
 })
-
-
